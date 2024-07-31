@@ -3,14 +3,14 @@ import { NavLink, useLocation } from "react-router-dom";
 import { ReactSVG } from "react-svg";
 
 import { LogoutIcon } from "../../assets";
-import "./Sidebar.scss";
+import "./Header.scss";
 import { usePostApi } from "../../hooks/api";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../Redux/slices/authSlice";
 import { Popconfirm } from "antd";
 import { QuestionCircleOutlined } from "@ant-design/icons";
 
-const Sidebar = ({ navigation }) => {
+const Header = ({ navigation }) => {
   const dispatch = useDispatch();
   const location = useLocation();
   const isIndex = location.pathname === "/admin" || location.pathname === "/";
@@ -48,12 +48,12 @@ const Sidebar = ({ navigation }) => {
   };
 
   return (
-    <div className="sidebar">
-      <div className="sidebar-logo">
+    <div className="header">
+      <div className="header-logo">
         <h1>REACTADMIN</h1>
       </div>
 
-      <div className="sidebar-menu">{renderRoutes}</div>
+      <div className="header-menu">{renderRoutes}</div>
       <Popconfirm
         title="Logout!"
         description="Are you sure you want to logout?"
@@ -77,4 +77,4 @@ const Sidebar = ({ navigation }) => {
   );
 };
 
-export default Sidebar;
+export default Header;

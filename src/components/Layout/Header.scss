@@ -1,7 +1,7 @@
 @import "../../styles/mixins";
 @import "../../styles/variables";
 
-.sidebar {
+.header {
   position: sticky;
   top: 0;
   left: 0;
@@ -22,13 +22,13 @@
     padding: 0;
   }
 
-  .sidebar-logo {
+  .header-logo {
     position: relative;
     width: 100%;
     text-align: justify;
   }
 
-  .sidebar-menu {
+  .header-menu {
     @include flex(column);
     gap: 10px;
     width: 100%;

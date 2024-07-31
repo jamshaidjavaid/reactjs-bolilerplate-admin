@@ -1,4 +1,4 @@
-import "./Topbar.scss";
+import "./Footer.scss";
 import React, { useState } from "react";
 import { ReactSVG } from "react-svg";
 import { Icon } from "@iconify/react";
@@ -9,7 +9,7 @@ import { LogoutIcon, ProfileImage, SearchIcon } from "../../assets";
 import { useCurrentRoute } from "../../routes/route-context";
 import Breadcrumb from "../Utilities/BreadCrumb";
 
-const Topbar = ({ navigation }) => {
+const Footer = ({ navigation }) => {
   const location = useLocation();
   const currentRoute = useCurrentRoute();
   const isIndex = location.pathname === "/admin" || location.pathname === "/";
@@ -44,9 +44,9 @@ const Topbar = ({ navigation }) => {
   });
 
   return (
-    <div className="topbar">
+    <div className="footer">
       <div>
-        <h2 className="page-headings-in-topbar">
+        <h2 className="page-headings-in-footer">
           {currentRoute ? currentRoute.title : "Admin"}
         </h2>
         <Breadcrumb />
@@ -59,7 +59,7 @@ const Topbar = ({ navigation }) => {
           </div>
         )}
       </div>
-      <div className="main-topbar-wrapper">
+      <div className="main-footer-wrapper">
         <div className="menu-and-picture-actions">
           <div className="mobile-menu-button">
             <Icon
@@ -103,4 +103,4 @@ const Topbar = ({ navigation }) => {
   );
 };
 
-export default Topbar;
+export default Footer;

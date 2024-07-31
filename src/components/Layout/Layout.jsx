@@ -1,19 +1,18 @@
 import React from "react";
 
-import { Outlet } from "react-router-dom";
-import Sidebar from "./Sidebar";
+import Header from "./Header";
 
 import "./Layout.scss";
-import Topbar from "./Topbar";
+import Footer from "./Footer";
 
 const Layout = ({ navigation, children }) => {
   return (
     <div className="layout-container">
-      <Sidebar navigation={navigation} />
+      <Header navigation={navigation} />
       <main>
-        <Topbar navigation={navigation} />
         <div className="outlet-main-container">{children}</div>
       </main>
+      <Footer navigation={navigation} />
     </div>
   );
 };
