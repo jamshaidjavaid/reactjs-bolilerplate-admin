@@ -50,7 +50,7 @@ const Sidebar = ({ navigation }) => {
   return (
     <div className="sidebar">
       <div className="sidebar-logo">
-        <h1>SPEKTRUM</h1>
+        <h1>REACTADMIN</h1>
       </div>
 
       <div className="sidebar-menu">{renderRoutes}</div>

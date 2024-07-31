@@ -87,7 +87,7 @@ const Topbar = ({ navigation }) => {
         className="mobile-menu-drawer"
       >
         <div className="sidebar sidebar-mobile">
-          <h1>SPEKTRUM</h1>
+          <h1>REACTADMIN</h1>
           <div className="sidebar-menu">{renderRoutes}</div>
           <Link
             to={`/admin/login`}
