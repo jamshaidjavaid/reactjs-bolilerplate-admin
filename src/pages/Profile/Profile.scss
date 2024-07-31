@@ -1,0 +1,62 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.profile-page {
+  .profile-container {
+    margin-top: 20px;
+    .profile-image {
+      @include flex(row, "", center);
+      margin-top: 20px;
+      gap: 20px;
+      .upload-button {
+        input {
+          display: none;
+          visibility: hidden;
+        }
+      }
+      h6 {
+        font-size: 14px;
+        font-weight: 700px;
+        color: $tertiaryColor;
+        cursor: pointer;
+      }
+      img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    }
+    .profile-form {
+      margin-top: 20px;
+      form {
+        @include flex(column, flex-start);
+        max-width: 40%;
+        gap: 15px;
+        @media (max-width: 800px) {
+          max-width: 100%;
+        }
+        input {
+          color: $primaryColor;
+          font-weight: 500;
+          font-size: 15px;
+          &::placeholder {
+            color: $secondaryColor;
+          }
+        }
+        button {
+          width: 50%;
+          margin-left: auto;
+          margin-block: 15px 40px;
+          @media (max-width: 800px) {
+            width: 100%;
+          }
+        }
+        .error {
+          margin-top: 5px;
+          color: $errorColor;
+        }
+      }
+    }
+  }
+}

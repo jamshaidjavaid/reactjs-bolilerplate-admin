@@ -1,0 +1,23 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables";
+
+.breadcrumb {
+  @include flex(row, "", center);
+  color: $secondaryColor;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+  li {
+    list-style: none;
+    a {
+      color: $secondaryColor;
+      &:hover {
+        color: $primaryColor;
+      }
+    }
+  }
+  .separator {
+    margin-inline: 3px;
+  }
+}

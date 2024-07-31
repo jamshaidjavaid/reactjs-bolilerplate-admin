@@ -1,0 +1,45 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.layout-container {
+  height: 100%;
+  display: flex;
+  gap: 30px;
+  @media (max-width: 767px) {
+    @include flex(column);
+  }
+  main {
+    flex-grow: 1;
+    height: 100%;
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow-y: hidden;
+
+    padding-right: 20px;
+    @media (max-width: 800px) {
+      padding-inline: 10px;
+    }
+
+    .outlet-main-container {
+      margin-top: 8px;
+      margin-bottom: 10px;
+      height: calc(100vh - 105px);
+      overflow-y: auto;
+
+      &::-webkit-scrollbar-track {
+        display: none;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        display: none;
+      }
+    }
+
+    .button-active {
+      background: $background;
+      color: white;
+      border: 1px solid $tertiaryColor;
+      font-weight: 700;
+    }
+  }
+}

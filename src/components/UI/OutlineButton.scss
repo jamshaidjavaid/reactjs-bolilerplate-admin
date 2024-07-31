@@ -1,0 +1,19 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables";
+
+.outline-button {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 15px 33px;
+  @include customBorder(1px, solid, $errorColor);
+  background: none;
+  box-shadow: $box-shadow;
+  color: $errorColor;
+  border-radius: 50px;
+  transition: all 0.2s;
+  &:hover {
+    background-color: $errorColor;
+    color: white;
+  }
+}

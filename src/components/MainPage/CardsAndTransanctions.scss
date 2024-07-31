@@ -1,0 +1,116 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.cards-and-transanctions {
+  margin-top: 10px;
+  @include flex(column, center, center);
+
+  @media (max-width: 800px) {
+    width: 100%;
+  }
+
+  .cards-container {
+    width: 100%;
+    @include flex(row, space-between, center);
+    @media (max-width: 800px) {
+      flex-direction: column;
+      justify-content: center;
+    }
+    gap: 10px;
+    .single-card {
+      width: 100%;
+      padding: 20px;
+      background-color: opacityColor($secondaryColor, 0.1);
+      border-radius: $primaryBorderRadius;
+
+      @media (max-width: 800px) {
+        @include flex(row, space-between, center);
+        width: 100%;
+      }
+
+      .text-link {
+        color: $secondaryColor;
+        @include flex(row, space-between, center);
+        margin-bottom: 30px;
+        @media (max-width: 800px) {
+          margin: 0px;
+          justify-content: flex-start;
+          gap: 15px;
+          width: fit-content;
+        }
+        &:hover {
+          color: $primaryColor;
+          svg {
+            fill: $primaryColor;
+          }
+        }
+      }
+    }
+  }
+  .transanction-container {
+    width: 100%;
+    margin-top: 10px;
+    padding: 20px;
+    @include customBorder();
+    .transaction-row-1 {
+      @include flex(row, space-between, center);
+      color: $secondaryColor;
+
+      @media (max-width: 800px) {
+        flex-direction: column;
+        h4 {
+          align-self: flex-start;
+          margin-bottom: 10px;
+        }
+      }
+      .inputs {
+        @include flex(row, space-between, center);
+        gap: 5px;
+        input {
+          color: $primaryColor;
+          height: 30px;
+          width: 110px;
+          &::placeholder {
+            color: $secondaryColor;
+          }
+        }
+        div {
+          display: flex;
+        }
+      }
+    }
+    .transaction-row-2 {
+      margin-top: 30px;
+      @include flex(row, space-between, center);
+      @media (max-width: 800px) {
+        margin-top: 10px;
+        flex-direction: column;
+      }
+      .row-2-left {
+        @include flex(row, "", flex-end);
+        @media (max-width: 800px) {
+          justify-content: space-between;
+          width: 100%;
+        }
+        .select-currency {
+          color: blue;
+          font-weight: 600;
+        }
+
+        .select-dropdown .ant-select-item-option {
+          color: blue;
+          font-weight: 600;
+        }
+      }
+      .row-2-right {
+        @include flex(row, "", center);
+        @media (max-width: 800px) {
+          justify-content: space-between;
+          margin-top: 10px;
+          width: 100%;
+        }
+        gap: 10px;
+      }
+    }
+  }
+}

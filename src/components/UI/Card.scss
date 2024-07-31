@@ -1,0 +1,10 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables";
+
+.custom-card-container {
+  background-color: #ffffff;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid $borderColor;
+}

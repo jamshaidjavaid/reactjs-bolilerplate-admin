@@ -1,0 +1,17 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables";
+
+.secondary-button {
+  font-size: 12px;
+  padding: 6px 15px;
+  border: $primaryBorder;
+  border-radius: $primaryBorderRadius;
+  background-color: transparent;
+  color: $secondaryColor;
+  transition: all 0.2s;
+  &:hover {
+    background-color: $primaryColor;
+    border: $primaryBorder;
+    color: white;
+  }
+}

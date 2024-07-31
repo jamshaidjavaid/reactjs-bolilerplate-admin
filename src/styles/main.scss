@@ -1,0 +1,201 @@
+@import "./variables";
+@import "./mixins";
+
+* {
+  box-sizing: border-box;
+  font-family: $primaryFont;
+}
+
+svg {
+  display: block;
+}
+
+body {
+  // Resetting
+  height: 100%;
+  margin: 0;
+  background-color: #fafaff;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  hr {
+    margin: 0;
+    padding: 0;
+  }
+
+  // setting fonts
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+  }
+  p {
+    font-size: 12px;
+  }
+
+  // setting form items
+  button {
+    cursor: pointer;
+  }
+  input {
+    width: 100%;
+    @include customBorder;
+    height: 45px;
+    padding-inline: 10px;
+    color: $primaryColor;
+    outline-color: $primaryColor;
+    &::placeholder {
+      color: $secondaryColor;
+    }
+  }
+  select,
+  input {
+    background-color: transparent;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+#root {
+  margin-inline: auto;
+  max-width: 1920px;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.app-container {
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  color: $textColor;
+}
+
+/* Set the width and height of the scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  @media (max-width: 767px) {
+    height: 2px;
+  }
+}
+
+/* Set the background color of the scrollbar */
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* Set the color of the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: $primaryColor;
+  border-radius: 10px;
+}
+
+/* Set the color of the scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: $tertiaryColor;
+}
+
+.ant-table-wrapper .ant-table {
+  font-family: $primaryFont !important;
+}
+
+.ant-table-wrapper .ant-table-thead > tr > th {
+  color: $secondaryColor;
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+  background: none;
+  background-color: opacityColor($secondaryColor, 0.1);
+  &::before {
+    display: none;
+  }
+}
+
+.ant-table-wrapper .ant-table-pagination-right {
+  justify-content: flex-start !important;
+}
+
+.ant-table-wrapper .ant-table-pagination.ant-pagination {
+  margin-left: auto;
+  background-color: opacityColor($secondaryColor, 0.1);
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.ant-pagination .ant-pagination-options {
+  margin-left: auto;
+}
+
+.ant-table-wrapper .ant-table td {
+  font-size: 14px;
+  color: $primaryColor;
+}
+
+.ant-table-wrapper .ant-table-thead > tr > th {
+  background: none;
+  background: #fafaff;
+}
+.ant-table-tbody {
+  background: none;
+  background: #fafaff;
+}
+
+.ant-form-item {
+  margin: 0;
+}
+
+.ant-modal .ant-modal-content {
+  font-family: $primaryFont !important;
+}
+
+.ant-select-selection-item {
+  color: $primaryColor;
+  font-weight: 400 !important;
+}
+.ant-select-arrow {
+  svg {
+    fill: $tertiaryColor;
+    stroke: red;
+    stroke-width: 5px;
+  }
+}
+
+.ant-drawer-close {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+// status colors
+.green {
+  color: $successColor;
+  background-color: opacityColor($successColor, 0.1);
+  border-radius: $primaryBorderRadius;
+  padding: 4px 7px;
+}
+.yellow {
+  color: $pendingColor;
+  background-color: opacityColor($pendingColor, 0.1);
+  border-radius: $primaryBorderRadius;
+  padding: 4px 7px;
+}
+.red {
+  color: $errorColor;
+  background-color: opacityColor($errorColor, 0.1);
+  border-radius: $primaryBorderRadius;
+  padding: 4px 7px;
+}
+.black {
+  color: $primaryColor;
+  background-color: opacityColor($primaryColor, 0.1);
+  border-radius: $primaryBorderRadius;
+  padding: 4px 7px;
+}

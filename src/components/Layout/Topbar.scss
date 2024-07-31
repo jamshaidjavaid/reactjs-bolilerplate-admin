@@ -1,0 +1,107 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.topbar {
+  // height: 117px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  @include flex(row, space-between, center);
+  @include customBorder(1px, solid, $secondaryColor, "", bottom);
+
+  @media (max-width: 800px) {
+    flex-direction: column-reverse;
+  }
+
+  .page-headings-in-topbar {
+    margin-top: 10px;
+  }
+
+  .search-wrapper {
+    margin-left: auto;
+    margin-right: 20px;
+    width: 300px;
+
+    @media (max-width: 800px) {
+      margin-top: 10px;
+      margin-inline: auto;
+      width: 100%;
+    }
+
+    .search {
+      min-width: 240px;
+      width: 100%;
+      border: $primaryBorder;
+      border-radius: $primaryBorderRadius;
+      padding-left: 15px;
+      @include flex(row, "", center);
+
+      @media (max-width: 800px) {
+        width: 100%;
+      }
+
+      input {
+        width: 100%;
+        outline: none;
+        border: none;
+        font-size: 15px;
+        font-weight: 500;
+      }
+      &:focus-within {
+        border: 1px solid $primaryColor;
+      }
+    }
+  }
+  .main-topbar-wrapper {
+    @include flex(row, "", center);
+    gap: 20px;
+    @media (max-width: 800px) {
+      flex-direction: column-reverse;
+      width: 100%;
+    }
+    a {
+      width: 100%;
+    }
+
+    .topbar-button {
+      @media (max-width: 800px) {
+        margin-inline: auto;
+        width: 90%;
+      }
+      div {
+        display: flex;
+      }
+    }
+    .menu-and-picture-actions {
+      @media (max-width: 800px) {
+        width: 100%;
+        @include flex(row, space-between, center);
+      }
+      .mobile-menu-button {
+        display: none;
+
+        @media (max-width: 800px) {
+          display: block;
+        }
+      }
+      .picture-actions {
+        img {
+          height: 55px;
+          width: 55px;
+          object-fit: cover;
+          border-radius: 50%;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.sidebar-mobile {
+  display: flex;
+  width: auto;
+  height: auto;
+  visibility: visible;
+  padding: 0px 20px;
+  height: 100%;
+  background-color: white;
+}

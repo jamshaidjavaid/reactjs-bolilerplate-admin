@@ -1,0 +1,23 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables";
+
+.tertiary-button {
+  padding: 5px 10px;
+  border: 1px solid rgba(16, 199, 219, 0.1);
+  font-weight: 400px;
+  font-weight: 14px;
+  @include flex(row, center, center);
+  gap: 15px;
+  white-space: nowrap;
+  border-radius: 50px;
+  background: $background;
+  color: white;
+  transition: all 0.2s;
+  &:hover {
+    @include customBorder(1px, solid, $primaryColor, 50px);
+    color: $primaryColor;
+    svg {
+      fill: $primaryColor;
+    }
+  }
+}
